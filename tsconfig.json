@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "lib": [
+      "ES2021",
+      "dom"
+    ],
+    "baseUrl": ".",
+  },
+  "include": [
+    "./src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modues",
+  ]
+}
