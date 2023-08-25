@@ -1,0 +1,12 @@
+@use '../common/styles/_colors';
+
+button {
+  height: fit-content;
+  padding: 1em 2em;
+  border: none;
+  color: colors.$paper-primary;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: colors.$button-blue;
+  border-radius: 4px;
+}

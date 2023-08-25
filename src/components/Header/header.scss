@@ -1,0 +1,16 @@
+@use '../../common/styles/_colors';
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: colors.$paper-primary;
+  padding: .2em 1em;
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.15);
+
+  img {
+    max-height: -webkit-fill-available;
+  }
+}
