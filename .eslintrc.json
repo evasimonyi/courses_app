@@ -16,16 +16,19 @@
     "prettier"
   ],
   "rules": {
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
+    ],
     "prettier/prettier": [
       "error",
       {
         "printWidth": 80,
         "trailingComma": "es5",
         "semi": true,
-        "jsxSingleQuote": true,
+        "jsxSingleQuote": false,
         "singleQuote": true,
         "useTabs": false,
-        "endOfLine": "auto",
         "max-len": [
           "error",
           {
@@ -40,7 +43,8 @@
           "(.*).(scss|css)$"
         ],
         "importOrderSeparation": true,
-        "importOrderSortSpecifiers": true
+        "importOrderSortSpecifiers": true,
+        "jsx-curly-newline": "none"
       }
     ],
     "@typescript-eslint/no-namespace": "off",

@@ -9,6 +9,8 @@ header {
   background-color: colors.$paper-primary;
   padding: .2em 1em;
   box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
 
   img {
     max-height: -webkit-fill-available;

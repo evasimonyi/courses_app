@@ -1,0 +1,64 @@
+@use '../../common/styles/_colors';
+
+h1 {
+  margin: 0;
+}
+
+.course-info-container {
+  gap: 1em;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  background-color: colors.$paper-secondary;
+  flex: 1;
+}
+
+.course-info-container>div:last-child {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.course-info-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.4em 2em;
+  background-color: colors.$paper-primary;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  box-sizing: border-box;
+
+  p {
+    margin: 0,
+  }
+}
+
+.course-info-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.course-info-content>div:first-child {
+  width: 55%;
+}
+
+.course-info-content>div:last-child {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: .4em;
+  }
+}
+
+.divider {
+  width: 1px;
+  height: 100%;
+  background-color: #ccc;
+  margin: 0 30px;
+}

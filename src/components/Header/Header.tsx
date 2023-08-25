@@ -5,7 +5,7 @@ import './header.scss';
 const Header = () => (
   <header>
     <Logo imageSrc={process.env.PUBLIC_URL + '/assets/images/logo.png'} />
-    <Button buttonText='Logout' />
+    <Button buttonText="Logout" />
   </header>
 );
 
