@@ -1,24 +1,18 @@
 import { Course } from '../../../common/domain/coursesType';
 import Button from '../../../common/Button';
-import { AUTHOR_LIST } from '../../../constants';
-import { getAuthorById } from '../../../util/getAuthor';
-
+import { getAuthorsNameOfCourse } from '../../../util/getAuthor';
 import './courseCard.scss';
+import { SHOW_COURSE_BUTTON_TEXT } from 'src/constants';
 
-const CourseCard = (props: { course: Course }) => {
-  const { course } = props;
-
-  const authors = course.authors.length
-    ? course.authors.map((author) => getAuthorById(author, AUTHOR_LIST))
-    : [];
-
-  const authorNames = authors.map((author) => author.name);
+const CourseCard = (props: { course: Course; setSelectedCourse: () => void }) => {
+  const { course, setSelectedCourse } = props;
+  const authorNames = getAuthorsNameOfCourse(course);
 
   return (
-    <section className='courseCardContainer'>
-      <div className='colored-line'></div>
+    <div className="course-card-container">
+      <div className="colored-line"></div>
       <h1>{course.title}</h1>
-      <div className='courseCardContent'>
+      <div className="course-card-content">
         <div>
           <p>{course.description}</p>
         </div>
@@ -26,10 +20,8 @@ const CourseCard = (props: { course: Course }) => {
           <div>
             <dl>
               <dt>Authors:</dt>
-              {course.authors.length && (
-                <dt id='authorList'>{authorNames.join(', ')}</dt>
-              )}
-              {!course.authors.length && <dt>Unknown</dt>}
+              {course.authors.length > 0 && <dt id="author-list">{authorNames.join(', ')}</dt>}
+              {!(course.authors.length > 0) && <dt>Unknown</dt>}
             </dl>
             <dl>
               <dt>Duration:</dt>
@@ -41,11 +33,15 @@ const CourseCard = (props: { course: Course }) => {
             </dl>
           </div>
           <div>
-            <Button buttonText='show course' />
+            <Button
+              buttonText={SHOW_COURSE_BUTTON_TEXT}
+              handleClick={setSelectedCourse}
+              style={{ width: 'fit-content' }}
+            />
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

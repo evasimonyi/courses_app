@@ -16,22 +16,25 @@
     "prettier"
   ],
   "rules": {
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
+    ],
     "prettier/prettier": [
       "error",
       {
-        "printWidth": 80,
         "trailingComma": "es5",
         "semi": true,
-        "jsxSingleQuote": true,
+        "jsxSingleQuote": false, // for enforcing double quotes in html code
         "singleQuote": true,
         "useTabs": false,
-        "endOfLine": "auto",
         "max-len": [
-          "error",
+          "warn",
           {
-            "code": 80
+            "code": 100
           }
         ],
+        "printWidth": 100,
         "importOrder": [
           "^react(.*)$",
           "<THIRD_PARTY_MODULES>",
@@ -39,8 +42,7 @@
           "^[.](?!.*.(scss|css)$).*$",
           "(.*).(scss|css)$"
         ],
-        "importOrderSeparation": true,
-        "importOrderSortSpecifiers": true
+        "endOfLine": "auto" // for Delete `CR` [prettier/prettier] error
       }
     ],
     "@typescript-eslint/no-namespace": "off",

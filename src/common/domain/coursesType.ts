@@ -6,5 +6,3 @@ export type Course = {
   duration: number;
   authors: string[];
 };
-
-export type Courses = Course[];

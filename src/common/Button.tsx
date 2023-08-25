@@ -5,8 +5,14 @@ interface ButtonProps {
   handleClick?: () => void;
 }
 
-const Button = ({ buttonText, handleClick }: ButtonProps) => {
-  return <button onClick={handleClick}>{buttonText}</button>;
+const Button: React.FC<ButtonProps & React.HTMLProps<HTMLInputElement>> = (props: ButtonProps) => {
+  const { buttonText, handleClick, ...restProps } = props;
+
+  return (
+    <button onClick={handleClick} {...restProps}>
+      {buttonText}
+    </button>
+  );
 };
 
 export default Button;

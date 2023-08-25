@@ -1,15 +1,20 @@
-import { COURSE_LIST } from '../../constants';
 import CourseCard from './CourseCard/CourseCard';
 import { Course } from '../../common/domain/coursesType';
 import './courses.scss';
 
-const Courses = () => {
+const Courses = (props: { setSelectedCourse: (course: Course) => void; courses: Course[] }) => {
+  const { setSelectedCourse, courses } = props;
+
   return (
-    <main>
-      {COURSE_LIST.map((course: Course) => (
-        <CourseCard course={course} key={course.id} />
+    <section className="courses-container">
+      {courses.map((course: Course) => (
+        <CourseCard
+          course={course}
+          key={course.id}
+          setSelectedCourse={() => setSelectedCourse(course)}
+        />
       ))}
-    </main>
+    </section>
   );
 };
 
