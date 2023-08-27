@@ -45,7 +45,10 @@
         "endOfLine": "auto" // for Delete `CR` [prettier/prettier] error
       }
     ],
-    "@typescript-eslint/no-namespace": "off",
+    // "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn"
+    ],
     "no-duplicate-imports": "error"
   }
 }

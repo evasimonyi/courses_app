@@ -33,7 +33,7 @@ const SearchBar = (props: {
     <div className="searchbar">
       <Input
         value={searchedText}
-        setValue={setSearchedText}
+        handleOnChange={(event) => setSearchedText(event.target.value)}
         style={{ width: '50%', padding: '0 1em' }}
         placeholder="Search for course"
       />

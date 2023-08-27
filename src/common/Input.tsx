@@ -2,18 +2,18 @@ import './input.scss';
 
 type InputProps = {
   value: string;
-  setValue: (value: string) => void;
+  handleOnChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const Input: React.FC<InputProps & React.HTMLProps<HTMLInputElement>> = (props: InputProps) => {
-  const { value, setValue, ...restProps } = props;
+  const { value, handleOnChange, ...restProps } = props;
 
   return (
     <input
       className="common-input-field"
       type="text"
       value={value}
-      onChange={(event) => setValue(event.target.value)}
+      onChange={handleOnChange}
       {...restProps}
     />
   );

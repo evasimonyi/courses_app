@@ -1,12 +1,6 @@
 @use './common/styles/_colors';
 
 main {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.dashboard {
   gap: 2em;
   width: 60%;
   display: flex;

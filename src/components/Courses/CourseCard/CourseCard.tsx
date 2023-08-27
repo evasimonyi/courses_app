@@ -2,6 +2,7 @@ import { Course } from '../../../common/domain/coursesType';
 import Button from '../../../common/Button';
 import { getAuthorsNameOfCourse } from '../../../util/getAuthor';
 import './courseCard.scss';
+import '../../../common/styles/_common_styles.scss';
 import { SHOW_COURSE_BUTTON_TEXT } from 'src/constants';
 
 const CourseCard = (props: { course: Course; setSelectedCourse: () => void }) => {
@@ -9,7 +10,7 @@ const CourseCard = (props: { course: Course; setSelectedCourse: () => void }) =>
   const authorNames = getAuthorsNameOfCourse(course);
 
   return (
-    <div className="course-card-container">
+    <div className="course-card-container cardStyle">
       <div className="colored-line"></div>
       <h1>{course.title}</h1>
       <div className="course-card-content">
